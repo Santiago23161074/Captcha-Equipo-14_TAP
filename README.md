@@ -371,14 +371,20 @@ Entrar a tu proyecto el cual quieras implemntar nuestro captcha y abrir el apart
 
 **Paso 3**
 Dar click derecho en la carpeta libreries y elegir la opción de "add jar/Folder.."
++
++
 ![Image](https://github.com/user-attachments/assets/d0473469-658c-422e-83f8-86090d4a8ed5)
 
 **Paso 4**
 Pegar la ruta del archivo Jar o seleccionarlo deesde la pestaña emergente y así habrás implementado de forma correcta nuestro -jar
++
++
 ![Image](https://github.com/user-attachments/assets/35923560-7a92-4fc0-b08a-b1e98d2d36cc)
 
 **Paso 5**
 Así se debe de ver si agregaste la libreria de una forma correcta
++
++
 ![Image](https://github.com/user-attachments/assets/cd3de793-27b6-4451-8eb6-11aee872220c)
 
 **Extra**
