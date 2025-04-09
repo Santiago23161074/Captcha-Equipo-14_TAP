@@ -343,6 +343,13 @@ captcha.AgregarImagen(captchaImage, imageLabel);
 JLabel resultLabel = new JLabel();
 boolean esValido = captcha.ValidarCaptcha(entradaUsuario, captchaText, resultLabel);
 ```
+
+## Método de solo números (erroneo)
+![Image](https://github.com/user-attachments/assets/5382d188-8411-4a67-8020-c83c3c126b7d)
+
+## Método de solo números (correcto)
+![Image](https://github.com/user-attachments/assets/08243030-fd97-4fe3-86d2-eaf76a6a76d5)
+
 ****
 # Instalación de la libreria 
 
@@ -367,5 +374,4 @@ boolean esValido = captcha.ValidarCaptcha(entradaUsuario, captchaText, resultLab
 - Pérez Jiménez Santiago Enmanuel 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
