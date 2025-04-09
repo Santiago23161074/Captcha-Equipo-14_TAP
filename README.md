@@ -6,205 +6,102 @@ Sistema para generar y validar captchas de diferentes tipos (numéricos, alfabé
 
 **Estructura del proyecto**
 
-El proyecto se compone de tres clases principales:
+El proyecto se compone de dos clases principales:
 
-- Validacion_Captcha: Clase abstracta que define la estructura base
 - Captcha: Implementación concreta de la funcionalidad de captcha
 - Prueba_Equipo14: Interfaz gráfica para probar el sistema
 ****
-
-# Clase Abstracta
-
-## Paquete
-
-```bash
-  package Paquete_Captcha;
-```
-
-## Dependencias
-
-```bash
-  import javax.swing.JLabel;
-  import javax.swing.JTextField;
-```
-## Métodos Abstractos
-
-**GenerarCaptcha(int N, int Tipo)**
-
-```bash
-   public abstract String GenerarCaptcha(int N, int Tipo);
-```
-
-## Parámetros:
-
-- N - La longitud del captcha a generar
-- Tipo - El tipo de captcha (1: numérico, 2: alfabético, 3: alfanumérico)
-
-## Retorna:
-
-- Una cadena de caracteres que representa el captcha generado
-****
-
-**ValidarCaptcha(String Captcha_Verdadero, String Captcha_Ingresado, JLabel resultLabel)**
-
-```bash
-  public abstract boolean ValidarCaptcha(String Captcha_Verdadero, String Captcha_Ingresado, JLabel resultLabel);
-```
-## Parámetros:
-
-- Captcha_Verdadero - La cadena captcha original generada
-- Captcha_Ingresado - La cadena captcha ingresada por el usuario
-- resultLabel - Un JLabel para mostrar el resultado de la validación
-
-## Retorna:
-
-- true si el captcha ingresado coincide con el captcha generado, false en caso contrario.
-
-****
-
-**Restricciones_TxT(JTextField Campo_de_Texto, int Tipo)**
-
-```bash
-  public abstract void Restricciones_TxT(JTextField Campo_de_Texto, int Tipo);
-```
-
-## Retorna:
-
-- Campo_de_Texto - El campo de texto al que se aplicarán las restricciones
-- Tipo - El tipo de restricción (1: solo números, 2: alfanumérico)
-
 # Clase Captcha
+**Explicación del código de la clase Captcha**
+Este código define una clase Java llamada Captcha dentro del paquete Paquete_Captcha. La clase proporciona funcionalidad para generar códigos CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart), que son sistemas de verificación utilizados en aplicaciones web para distinguir entre usuarios humanos y programas automatizados.
 
+**Descripción general**
+- La clase Captcha contiene métodos estáticos para:
+- Generar diferentes tipos de códigos CAPTCHA (numéricos, alfabéticos o combinados)
+- Crear imágenes que representan visualmente los códigos CAPTCHA
+- Validar la entrada del usuario contra el CAPTCHA generado
+- Aplicar restricciones a campos de texto para aceptar solo ciertos tipos de caracteres
+
+**Atributos**
+La clase no define atributos de instancia o estáticos.
+
+**Constructor**
 ## Paquete
 
 ```bash
-  package Paquete_Captcha;
+  public Captcha():
 ```
-
-## Dependencias
-
-```bash
-  import java.awt.*;
-  import java.awt.event.KeyAdapter;
-  import java.awt.event.KeyEvent;
-  import java.awt.image.BufferedImage;
-  import java.util.Random;
-  import javax.swing.*;
-```
-
-
-## Campos
-
-
-| Campo | Tipo |Description                |
-| :-------- |--|:-------------------------- |
-| `rand ` |private, Random|Generador de números aleatorios utilizado para crear CAPTCHAs aleatorios|
-
-## Constructor
-
-Captcha()
-
-Crea una nueva instancia de la clase Captcha.
-
-```bash
-  public Captcha()
-```
-
+ Constructor vacío sin funcionalidad específica.
+ 
 
 ## Métodos
 
-**GenerarCaptcha(int N, int Tipo)**
+```bash
+  public final static String GenerarCaptchaSoloNumeros(int N)
+```
+- Propósito: Genera un CAPTCHA compuesto únicamente por dígitos numéricos.
+- Parámetros: N - Longitud del CAPTCHA a generar.
+- Retorno: String con números aleatorios de longitud N.
+- Funcionamiento: Selecciona caracteres al azar del conjunto "0123456789".
 
 ```bash
-  public String GenerarCaptcha(int N, int Tipo)
+  public final static String GenerarCaptchaCombinados(int N)
 ```
+- Propósito: Genera un CAPTCHA combinado de números y letras.
+- Parámetros: N - Longitud total del CAPTCHA.
+- Retorno: String con combinación de números y letras de longitud N.
+- Funcionamiento: Determina aleatoriamente cuántos caracteres serán números y cuántos serán letras, luego genera el código combinado.
 
-Genera una cadena CAPTCHA según el tipo especificado.
 
+## Manejo de restricciones de entrada
+```bash
+  public final static void Restricciones_TxT(JTextField Campo_de_Texto, int Tipo)
+```
+- Propósito: Aplica restricciones de entrada a un campo de texto.
+- Parámetros:
+- Campo_de_Texto - Campo de texto (JTextField) al que se aplicarán las restricciones.
+- Tipo - Tipo de restricción (1: solo números, 2: solo letras y números).
+- Funcionamiento: Agrega un KeyListener que filtra los caracteres no permitidos según el tipo especificado.
 
-**Parámetros:**
-
-- N - La longitud del captcha a generar
-- Tipo - El tipo de captcha:
- - 1: Solo números (0-9)
- - 2: Solo letras (A-Z, a-z)
- - 3: Combinación de números y letras
-
-**Retorna:**
-
-- Una cadena de caracteres aleatorios con la longitud especificada y el tipo seleccionado
-
-****
-
-**Restricciones_TxT(JTextField Campo_de_Texto, int Tipo)**
-
-Aplica restricciones a un campo de texto para limitar los tipos de caracteres que pueden ser ingresados.
-
+## Visualización del CAPTCHA
+```bash
+  public final static Image CrearImagen(String Captcha_A_Escribir)
+```
+- Propósito: Genera una imagen con el texto del CAPTCHA.
+- Parámetros: Captcha_A_Escribir - Texto del CAPTCHA que se dibujará en la imagen.
+- Retorno: Objeto Image que contiene la representación visual del CAPTCHA.
+- Funcionamiento: Crea una imagen en blanco y dibuja el texto del CAPTCHA con un formato específico.
 
 ```bash
-  public void Restricciones_TxT(JTextField Campo_de_Texto, int Tipo)
+ public final static void AgregarImagen(Image CaptchaCreado, JLabel lblImagen)
 ```
+- Propósito: Asigna la imagen del CAPTCHA a un componente JLabel.
+- Parámetros:
+- CaptchaCreado - Imagen del CAPTCHA generada previamente.
+- lblImagen - Componente JLabel donde se mostrará la imagen.
+- Funcionamiento: Convierte la imagen en un ImageIcon y lo asigna al JLabel especificado.
 
-**Parámetros:**
-
-- Campo_de_Texto - El campo de texto al que se aplicarán las restricciones
-- Tipo - El tipo de restricción:
-
-- 1: Solo permite dígitos numéricos
-- 2: Permite letras, dígitos, espacios y caracteres 'ñ'/'Ñ'
-****
-
-**CrearImagen(String Captcha_A_Escribir))**
-
-Crea una imagen que contiene el texto del captcha.
+## Validación del CAPTCHA
 
 ```bash
-   public Image CrearImagen(String Captcha_A_Escribir)
+  public final static boolean ValidarCaptcha(String CaptchaIngresado, String CaptchaVerdadero, JLabel resultLabel)
 ```
+- Propósito: Verifica si el CAPTCHA ingresado por el usuario coincide con el CAPTCHA generado.
+- Parámetros:
+- CaptchaIngresado - Texto ingresado por el usuario.
+- CaptchaVerdadero - CAPTCHA generado previamente contra el cual se valida.
+- resultLabel - Etiqueta donde se mostrará el resultado de la validación.
+- Retorno: true si el CAPTCHA es correcto, false si es incorrecto.
+- Funcionamiento: Compara las cadenas y muestra un mensaje adecuado en resultLabel.
 
-**Parámetros:**
+## Características técnicas
+- La clase está marcada como final, lo que significa que no puede ser extendida.
+- Todos los métodos son estáticos y también marcados como final, lo que impide su sobrescritura.
+- La clase utiliza componentes de Swing (JTextField, JLabel) para la interfaz gráfica.
+- Se implementa manejo de eventos de teclado para las restricciones de entrada.
 
-- Captcha_A_Escribir - La cadena captcha a renderizar como imagen
-
-**Retorna:**
-
-- Un objeto Image con el captcha renderizado
-
-****
-
-**ValidarCaptcha(String CaptchaIngresado, String CaptchaVerdadero, JLabel resultLabel)**
-
-Valida la entrada del usuario contra el captcha generado y actualiza una etiqueta de resultado.
-
-```bash
-   public boolean ValidarCaptcha(String CaptchaIngresado, String CaptchaVerdadero, JLabel resultLabel)
-```
-
-**Parámetros:**
-
-- CaptchaIngresado - La cadena captcha ingresada por el usuario
-- CaptchaVerdadero - La cadena captcha original generada
-- resultLabel - Un JLabel para actualizar con el resultado de la validación
-
-**Retorna:**
-
-- true si el captcha ingresado coincide con el captcha generado, false en caso contrario
-
-****
-
-**AgregarImagen(Image CaptchaCreado, JLabel lblImagen)**
-
-Agrega la imagen captcha a un componente JLabel para mostrarla.
-
-```bash
-   public void AgregarImagen(Image CaptchaCreado, JLabel lblImagen)
-```
-
-**Parámetros:**
-
-- CaptchaCreado - La imagen captcha a mostrar
-- lblImagen - El componente JLabel donde se mostrará la imagen
-
+## Notas de implementación
+Esta clase está diseñada para ser utilizada en aplicaciones Java que requieran un sistema de verificación CAPTCHA simple. Puede integrarse fácilmente con formularios u otros componentes de interfaz de usuario que necesiten verificar que el usuario es humano.
 ****
 
 # JFRAME de Prueba_Equipo14
