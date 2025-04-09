@@ -361,19 +361,33 @@ boolean esValido = captcha.ValidarCaptcha(entradaUsuario, captchaText, resultLab
 
 ****
 # Instalación de la libreria 
+**Paso 1**
+Desacrgar el .jar de Github de nuestro repositorio, llamado "Captcha.jar" y guardarlo en un lugar de facil accceso 
+![Image](https://github.com/user-attachments/assets/cad7c136-704b-42cb-b43f-dcbfc53a1eeb)
 
-## Requisitos técnicos
+**Paso 2**
+Entrar a tu proyecto el cual quieras implemntar nuestro captcha y abrir el apartado de las librerias 
+![Image](https://github.com/user-attachments/assets/4a804bdc-e117-4d40-93e7-510c8c27cf11)
 
-- Java SE 8 o superior
-- Biblioteca Swing para la interfaz gráfica
+**Paso 3**
+Dar click derecho en la carpeta libreries y elegir la opción de "add jar/Folder.."
+![Image](https://github.com/user-attachments/assets/d0473469-658c-422e-83f8-86090d4a8ed5)
 
-## Instalación
+**Paso 4**
+Pegar la ruta del archivo Jar o seleccionarlo deesde la pestaña emergente y así habrás implementado de forma correcta nuestro -jar
+![Image](https://github.com/user-attachments/assets/35923560-7a92-4fc0-b08a-b1e98d2d36cc)
 
-- Clone el repositorio o descargue los archivos fuente
-- Compile los archivos Java
-- Ejecute la clase Prueba_Equipo14
+**Paso 5**
+Así se debe de ver si agregaste la libreria de una forma correcta
+![Image](https://github.com/user-attachments/assets/cd3de793-27b6-4451-8eb6-11aee872220c)
 
-## Contribución
+**Extra**
+Para un buen funcioamiento de nuestro Jar puedes guiarte de como lo implementamos en nuestro JFrame que esta en adentro de la carpeta Captcha Equipo 14 de nuestro repositorio de GitHub
+![Image](https://github.com/user-attachments/assets/cb83f1dd-f39d-45cb-bec1-3492a3edb286)
+![Image](https://github.com/user-attachments/assets/53f010e2-0b47-4974-87da-877ce7d5bb92)
+![Image](https://github.com/user-attachments/assets/f99bf70f-b399-4bde-aca3-cca2f8eadadc)
+![Image](https://github.com/user-attachments/assets/500be052-bd21-4911-b587-a34a99c2fc82)
+
 
 ## Video guía
 
@@ -381,6 +395,5 @@ boolean esValido = captcha.ValidarCaptcha(entradaUsuario, captchaText, resultLab
 
 - Méndez García Ángel de Jesús
 - Pérez Jiménez Santiago Enmanuel 
-## Screenshots
 
 
