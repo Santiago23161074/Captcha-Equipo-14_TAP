@@ -350,6 +350,15 @@ boolean esValido = captcha.ValidarCaptcha(entradaUsuario, captchaText, resultLab
 ## Método de solo números (correcto)
 ![Image](https://github.com/user-attachments/assets/08243030-fd97-4fe3-86d2-eaf76a6a76d5)
 
+## Método de solo letras (erroneo)
+![Image](https://github.com/user-attachments/assets/ba987fc4-0963-481f-bd5c-6e3e41f477ca)
+
+## Método de solo letras (correcto)
+![Image](https://github.com/user-attachments/assets/bd293734-57ff-472d-ba7f-d8650c24edf4)
+
+## Método de solo mixto 
+![Image](https://github.com/user-attachments/assets/f4cced12-8de1-4688-bb33-73b29c81efd1)
+
 ****
 # Instalación de la libreria 
 
