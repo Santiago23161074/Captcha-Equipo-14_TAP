@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"Paquete_Captcha","l":"Captcha"},{"p":"Paquete_Captcha","l":"Validacion_Captcha"}];updateSearchResults();
