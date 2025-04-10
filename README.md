@@ -296,7 +296,8 @@ Para un buen funcioamiento de nuestro Jar puedes guiarte de como lo implementamo
 
 ## Video guía
 
-https://youtu.be/yJglylIXB7w
+**Instalación del Jar en un proeyecto**
+https://youtu.be/c7XfpK-TzV0
 
 ## Autores
 
