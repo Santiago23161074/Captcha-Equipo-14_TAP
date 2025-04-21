@@ -3,6 +3,8 @@
 **Descripción General**
 
 Sistema para generar y validar captchas de diferentes tipos (numéricos, alfabéticos o combinados) implementado en Java con interfaz gráfica Swing. Permite la creación de captchas personalizables en longitud y tipo de caracteres, con validación visual en tiempo real.
+- Solo se puede usar con un JDK 23 en adelante, si se intenta con una versión anterior marcara error
+  
 
 **Estructura del proyecto**
 
